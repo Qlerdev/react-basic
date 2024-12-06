@@ -14,13 +14,13 @@ function StudentList() {
   }
 
   return (
-    <>
+    <div className="flex justify-center items-center">
       <h1>จำนวนนักเรียน = {students.length}</h1>
       <button onClick={() => setShow(!show)}>สลับ</button>
       {show && (
         <ul>
           {students.map((item) => (
-            <li key={item.id} className="px-5">
+            <li key={item.id} className="px-5 ">
               <p>
                 {item.id} - {item.name}
               </p>
@@ -36,7 +36,7 @@ function StudentList() {
           ))}
         </ul>
       )}
-    </>
+    </div>
   );
 }
 

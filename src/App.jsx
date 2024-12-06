@@ -5,10 +5,12 @@ import StudentList from "./components/StudentList";
 
 function App() {
   return (
-    <>
+    <div className="App">
       <Header />
-      <StudentList />
-    </>
+      <main>
+        <StudentList />
+      </main>
+    </div>
   );
 }
 
