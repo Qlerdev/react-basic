@@ -2,13 +2,21 @@
 import "./App.css";
 import Header from "./components/Header";
 import StudentList from "./components/StudentList";
+import AddForm from "./components/AddForm";
+import { useState } from "react";
 
 function App() {
+  // [{รหัสนักเรียน,{ชื่อนักเรียน},{},{}}]
+  function deleteStudent(id) {
+    setStudents(students.filter((student) => student.id !== id));
+  }
+  const [students, setStudents] = useState([]);
   return (
-    <div className="App">
-      <Header />
+    <div className="container">
+      <Header title="Home" />
       <main>
-        <StudentList />
+        <AddForm students={students} setStudents={setStudents} />
+        <StudentList students={students} deleteStudent={deleteStudent} />
       </main>
     </div>
   );
